@@ -1,6 +1,7 @@
 // 引入vue-router对象
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHashHistory, Router} from "vue-router";
 // 插件 vite-plugin-pages 的使用配置
+ // @ts-ignore 
 import routes from "~pages";
 
 /**

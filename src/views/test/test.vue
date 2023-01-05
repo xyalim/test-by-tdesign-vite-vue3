@@ -1,6 +1,6 @@
 <template>
   <div>1212312</div>
-  <BaseForm ref="BaseFormRef" :data="formData">
+  <BaseForm ref="BaseFormRef" :data="formData" class="mt-10px">
     <t-form-item name="testInput">
       <!-- v-model="formData.testInput" -->
       <!-- :modelValue="formData.testInput"
@@ -17,7 +17,7 @@
     <!-- <FormItemFactory v-bind="factoryList[0]" /> -->
   </BaseForm>
 
-  <t-button @click="onClickReset">重置表单</t-button>
+  <t-button @click="onClickReset" class="mt-10px">重置表单</t-button>
 </template>
 
 <script>

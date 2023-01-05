@@ -25,6 +25,8 @@ import Pages from 'vite-plugin-pages';
 // https://blog.csdn.net/m0_67265464/article/details/125345620
 import PkgConfig from 'vite-plugin-package-config'
 
+import Unocss from 'unocss/vite'
+
 
 // 使用node内置模块时 需要使用此依赖
 // npm install @types/node -D
@@ -55,12 +57,13 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
         // 可以选择auto-import.d.ts生成的位置，使用ts建议设置为'src/auto-import.d.ts'
         dts: 'auto-import.d.ts',
         resolvers: [TDesignResolver({
-          library: 'vue-next'
+          library: 'vue-next',
         })],
       }),
       Components({
         resolvers: [TDesignResolver({
-          library: 'vue-next'
+          library: 'vue-next',
+          importStyle: false,
         })],
       }),
   
@@ -76,6 +79,9 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
         routeBlockLang: 'yml',
       }),
       typeof PkgConfig === 'function' ? PkgConfig() : PkgConfig.default() ,
+
+      // 配置查看 unocss.config.ts
+      Unocss(),
     ],
   }
 })
