@@ -58,6 +58,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
         dts: 'auto-import.d.ts',
         resolvers: [TDesignResolver({
           library: 'vue-next',
+          importStyle: false,
         })],
       }),
       Components({
